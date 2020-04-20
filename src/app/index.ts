@@ -1,15 +1,14 @@
 import express from "express";
-import dotenv from "dotenv";
+import dotEnv from "dotenv";
 
-dotenv.config();
+// Initialize dotenv configuration
+dotEnv.config();
 
-const appName = process.env.APP_NAME;
-const port = process.env.APP_PORT;
 const app = express();
 
-app.listen(port, () => {
+app.listen(process.env.APP_PORT, () => {
   // tslint:disable-next-line:no-console
   console.log(
-    `${appName} server started at http://localhost:${port}`
+    `${process.env.APP_NAME} server started at http://localhost:${process.env.APP_PORT}`
   );
 });
