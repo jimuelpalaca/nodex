@@ -1,0 +1,25 @@
+{
+  "name": "nodex",
+  "version": "1.0.0",
+  "description": "A Node.js - Express Framework Boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimuelpalaca/nodex.git"
+  },
+  "keywords": [
+    "Node.js",
+    "ExpressJS",
+    "TypeScript",
+    "Boilerplate"
+  ],
+  "author": "Jimuel Palaca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jimuelpalaca/nodex/issues"
+  },
+  "homepage": "https://github.com/jimuelpalaca/nodex#readme"
+}
