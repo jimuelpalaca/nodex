@@ -5,14 +5,17 @@ import express from 'express';
 import corsConfig from './config/cors';
 import apiRouter from '../routes/api.routes';
 import webRouter from '../routes/web.routes';
+import ApiResponse from './http/response/ApiResponse';
 
 // Initialize dotEnv configuration
 dotEnv.config();
 
 const app = express();
+const { RestApiResponse } = new ApiResponse();
 
 app.use(cors(corsConfig));
 app.use(bodyParser.json());
+app.use(RestApiResponse);
 app.use('', webRouter);
 app.use('/api', apiRouter);
 
