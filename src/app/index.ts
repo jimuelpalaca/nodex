@@ -5,7 +5,7 @@ import express from 'express';
 import corsConfig from './config/cors';
 import apiRouter from '../routes/api.routes';
 import webRouter from '../routes/web.routes';
-import ApiResponse from './services/responses/ApiResponse';
+import ApiResponse from './http/response/ApiResponse';
 
 // Initialize dotEnv configuration
 dotEnv.config();
