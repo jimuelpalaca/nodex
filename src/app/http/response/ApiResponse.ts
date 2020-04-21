@@ -43,7 +43,7 @@ class ApiResponse {
             .end();
     }
 
-    private static unprocessableEntity(errors: any[], message: string = 'Invalid Data'): void {
+    private static unprocessableEntity(errors: any[], message?: string): void {
         return ApiResponse.res
             .status(422)
             .json({
