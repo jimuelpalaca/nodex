@@ -16,9 +16,6 @@ app.use(bodyParser.json());
 app.use('', webRouter);
 app.use('/api', apiRouter);
 
-// tslint:disable-next-line:no-console
-console.log(process.env.APP_URL);
-
 app.listen(process.env.APP_PORT, () => {
     // tslint:disable-next-line:no-console
     console.log(`${process.env.APP_NAME} server started at http://localhost:${process.env.APP_PORT}`);
