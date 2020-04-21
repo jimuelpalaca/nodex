@@ -14,5 +14,5 @@
       "*": ["node_modules/*"]
     }
   },
-  "exclude": ["tests"]
+  "exclude": ["tests", "public"]
 }
