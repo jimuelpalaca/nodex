@@ -1,4 +1,4 @@
-import { Request } from 'express';
+import {NextFunction, Request} from 'express';
 import { Result, ValidationError, validationResult } from 'express-validator';
 import CustomResponse from '../response/CustomResponse';
 
@@ -12,7 +12,7 @@ export abstract class Validation {
     public abstract setRules(): any[];
 
     public validate() {
-        return (req: Request, res: CustomResponse, next: any) => {
+        return (req: Request, res: CustomResponse, next: NextFunction) => {
             const errors = validationResult(req);
 
             if (errors.isEmpty()) {
