@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import CustomResponse from './CustomResponse';
+import Transformer from "../mapper/Transformer";
 
 class ApiResponse {
     private static res: Response;
@@ -23,7 +24,7 @@ class ApiResponse {
             .end();
     }
 
-    private static withItem(datum: any, transformer?: any): void {
+    private static withItem(datum: any, transformer?: Transformer<any>): void {
         if (transformer) {
             datum = transformer.transform(datum);
         }
