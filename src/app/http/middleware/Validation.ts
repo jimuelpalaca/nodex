@@ -1,6 +1,6 @@
 import {NextFunction, Request} from 'express';
 import { Result, ValidationError, validationResult } from 'express-validator';
-import CustomResponse from '../response/CustomResponse';
+import Response from '../response/NodexResponse';
 
 export abstract class Validation {
     constructor() {
@@ -12,14 +12,14 @@ export abstract class Validation {
     public abstract setRules(): any[];
 
     public validate() {
-        return (req: Request, res: CustomResponse, next: NextFunction) => {
+        return (req: Request, res: Response, next: NextFunction) => {
             const errors = validationResult(req);
 
             if (errors.isEmpty()) {
                 return next();
             }
 
-            return res.errorUnprocessableEntity(Validation.formatErrors(errors));
+            return res.withErrors(Validation.formatErrors(errors));
         };
     }
 
