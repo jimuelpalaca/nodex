@@ -32,7 +32,7 @@ class UsersController {
     async show(req: Request, res: Response) {
         try {
             const { userId } = req.params;
-            const user: User = await this.findUser.findById(parseInt(userId, 10));
+            const user: User = await this.findUser.findById(userId);
 
             return res.withItem(user, new UsersTransformer());
         } catch (exception) {

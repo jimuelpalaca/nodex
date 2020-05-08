@@ -7,7 +7,7 @@ import CreateUser from '../../../src/modules/users/domain/usecases/CreateUser';
 import UserRepository from '../../../src/modules/users/domain/repositories/UserRepository';
 import UnprocessableEntityException from '../../../src/app/exceptions/UnprocessableEntityException';
 
-describe('User Creation', () => {
+describe('Create User', () => {
     let mockedUserRepository: UserRepository;
     let createUser: CreateUser;
 
@@ -43,7 +43,9 @@ describe('User Creation', () => {
 
     it('should throw an exception when saving user to the database fails', async () => {
         when(mockedUserRepository.findByEmail(anything())).thenReturn(null);
-        when(mockedUserRepository.create(anything(), anything(), anything(), anything())).thenReject(new Error('Transaction Fails'));
+        when(mockedUserRepository.create(anything(), anything(), anything(), anything())).thenReject(
+            new Error('Transaction Fails')
+        );
 
         await createUser
             .create('User', 'Test', 'user@test.com', 'password')

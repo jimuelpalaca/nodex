@@ -5,8 +5,8 @@ import NotFoundException from '../../../../app/exceptions/NotFoundException';
 class FindUser {
     constructor(private userRepository: UserRepository) {}
 
-    async findById(id: number): Promise<User> {
-        const user = await this.userRepository.findOne(id);
+    async findById(id: string): Promise<User> {
+        const user = await this.userRepository.findOne(parseInt(id, 10));
 
         if (!user) {
             throw new NotFoundException('User not found');
