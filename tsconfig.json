@@ -10,9 +10,11 @@
     "outDir": "dist",
     "baseUrl": "..",
     "allowJs": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "paths": {
       "*": ["node_modules/*"]
     }
   },
-  "exclude": ["tests"]
+  "exclude": ["tests", "public"]
 }
